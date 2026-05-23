@@ -1,0 +1,20 @@
+# Compiled executable
+bank
+*.out
+*.exe
+
+# Object files
+*.o
+
+# Binary data files
+*.dat
+
+# Build folders
+build/
+
+# VS Code settings
+.vscode/
+
+# Temporary files
+*.swp
+*.tmp
