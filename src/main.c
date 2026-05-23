@@ -7,7 +7,7 @@ int main()
     printf("******************* Welcome to DBI *******************\n");
     printf("Choose the choice from below:\n");
     printf("1. Check Balance\n");
-    printf("2. Deposite Amount\n");
+    printf("2. Deposit Amount\n");
     printf("3. Withdraw Amount\n");
     printf("4. Account Details\n");
     printf("5. Add new Customer\n");
@@ -19,13 +19,16 @@ int main()
     if(choice == 5)
     {
         add_customer();
-        return 1;
+        return 0;
     }
 
     int account_number = 0;
-    printf("Enter the account number: ");
-    scanf("%d", &account_number);
-
+    if(choice > 1 && choice <= 4)
+    {
+        printf("Enter the account number: ");
+        scanf("%d", &account_number);
+    }
+    
     switch (choice)
     {
     case 1:
