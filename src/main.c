@@ -13,46 +13,50 @@ int main()
     printf("5. Add new Customer\n");
     printf("6. Exit\n");
 
-    printf("Enter the choice :");
-    scanf("%d", &choice);
-
-    if(choice == 5)
+    while(1)
     {
-        add_customer();
-        return 0;
-    }
+        printf("Enter the choice :");
+        scanf("%d", &choice);
 
-    int account_number = 0;
-    if(choice > 1 && choice <= 4)
-    {
-        printf("Enter the account number: ");
-        scanf("%d", &account_number);
-    }
-    
-    switch (choice)
-    {
-    case 1:
-        acc_balance(account_number);
-        break;
-    
-    case 2:
-        deposit(account_number);
-        break;
+        if(choice == 5)
+        {
+            add_customer();
+        }
 
-    case 3:
-        withdraw_money(account_number);
-        break;
+        int account_number = 0;
+        if(choice >= 1 && choice <= 4)
+        {
+            printf("Enter the account number: ");
+            scanf("%d", &account_number);
+        }
 
-    case 4:
-        acc_details(account_number);
-        break;
+        switch (choice)
+        {
+        case 1:
+            acc_balance(account_number);
+            break;
     
-    case 6:
-        return 0;
+        case 2:
+            deposit(account_number);
+            break;
+
+        case 3:
+            withdraw_money(account_number);
+            break;
+
+        case 4:
+            acc_details(account_number);
+            break;
     
-    default:
-        printf("Invalid Choice\n");
-        break;
+        case 6:
+            return 0;
+    
+        default:
+            printf("Invalid Choice\n");
+            break;
+        }
+
+        printf("\n");
     }
 
     return 0;
