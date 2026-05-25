@@ -170,6 +170,8 @@ void deposit(int account_number)
             fseek(fp, -sizeof(Customer), SEEK_CUR);
             fwrite(&c, sizeof(Customer), 1, fp);
 
+            printf("Amount Added to Account!!!\n");
+
             fclose(fp);
             return ;
         }
@@ -219,40 +221,3 @@ void withdraw_money(int account_number)
     }
 }
 
-void acc_details(int account_number)
-{
-    
-    Customer c;
-
-    FILE *fp;
-    fp = fopen("data/bank.dat", "rb");
-    
-    if(fp == NULL)
-    {
-        printf("File Creation Failed\n");
-        return ;
-    }
-
-    while(fread(&c, sizeof(Customer), 1, fp))
-    {
-        if(c.account_num == account_number)
-        {
-            printf("Loading");
-            for(int i = 0; i < 3; i++)
-            {
-                printf(".");
-                fflush(stdout);
-                usleep(300000);
-            }
-            printf("\n");
-
-            printf("Account Found\n");
-            printf("Account Holder Name : %s\n", c.account_holder_name);
-            printf("Account NUmber: %d\n", c.account_num);
-            printf("Balance : %.2f\n", c.balance);
-            
-            fclose(fp);
-            return ;
-        }
-    }
-}

@@ -9,10 +9,14 @@ typedef struct customer
     float balance;
 }Customer ;
 
-void acc_balance(int acc_num);
-void deposit(int acc_num);
-void withdraw_money(int acc_num);
-void acc_details(int acc_num);
+// Primary Functions
 void add_customer();
 void admin_console();   
 void user_console(int account_number);
+
+// User Related Functions
+void acc_balance(int acc_num);
+void deposit(int acc_num);
+void withdraw_money(int acc_num);
+
+// Admin Related Functions
