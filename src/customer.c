@@ -58,21 +58,53 @@ void user_console()
 {
     int choice=0;
 
-    printf("============================================\n");
-    printf("            Welcome to DBI                  \n");
-    printf("============================================\n");
-    printf("    1. Withdraw\n");
-    printf("    2. Deposit\n");
-    printf("    3. Balance\n");
-    printf("    4. Logout\n");
+    while(1)
+    {
+        printf("============================================\n");
+        printf("            Welcome to DBI                  \n");
+        printf("============================================\n");
+        printf("    1. Withdraw\n");
+        printf("    2. Deposit\n");
+        printf("    3. Balance\n");
+        printf("    4. Logout\n");
 
-    printf("Enter the choice:");
-    scanf("%d", &choice);
+        printf("Enter the choice :");
+        scanf("%d", &choice);
 
-    // while(1)
-    // {
+        if(choice >= 1 && choice <= 4)
+        {
+            printf("Enter the account number: ");
+            scanf("%d", &account_number);
+        }
 
-    // }
+        switch (choice)
+        {
+        case 1:
+            acc_balance(account_number);
+            break;
+    
+        case 2:
+            deposit(account_number);
+            break;
+
+        case 3:
+            withdraw_money(account_number);
+            break;
+
+        case 4:
+            acc_details(account_number);
+            break;
+    
+        case 6:
+            return 0;
+    
+        default:
+            printf("Invalid Choice\n");
+            break;
+        }
+
+        printf("\n");
+    }
 }
 
 void acc_balance(int account_number)
