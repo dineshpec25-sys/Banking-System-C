@@ -3,7 +3,7 @@
 int main()
 {
     int l_choice=0;
-    // Customer c;
+    Customer c;
     while(1)
     {
         printf("============================================\n");
@@ -20,8 +20,33 @@ int main()
 
         if(l_choice == 1)
         {
-            printf("User_login\n");
-            user_console();
+            int acc_number;
+            int l_password;
+            FILE *fp;
+            fp = fopen("data/bank.dat", "rb");
+
+            printf("Enter the Account Number : ");
+            scanf("%d", &acc_number);
+
+            if(fp == NULL)
+            {
+                printf("404 Server Error!!!\n");
+                return ;
+            }
+
+            while(fread(&c, sizeof(Customer), 1, fp))
+            {
+                if(c.account_num == acc_number)
+                {
+                    printf("Enter Password :");
+                    scanf("%d", &l_password);
+
+                    if(c.password == l_password)
+                    {
+                        user_console();
+                    }
+                }
+            }
         }
         else if(l_choice == 2)
         {
@@ -32,52 +57,17 @@ int main()
             printf("Admin_login\n");
             // admin_console();
         }
+        else
+        {
+            break;
+        }
+
+        return 0;
     }
 
     // while(1)
     // {
-    //     printf("Enter the choice :");
-    //     scanf("%d", &choice);
-
-    //     if(choice == 5)
-    //     {
-    //         add_customer();
-    //     }
-
-    //     int account_number = 0;
-    //     if(choice >= 1 && choice <= 4)
-    //     {
-    //         printf("Enter the account number: ");
-    //         scanf("%d", &account_number);
-    //     }
-
-    //     switch (choice)
-    //     {
-    //     case 1:
-    //         acc_balance(account_number);
-    //         break;
     
-    //     case 2:
-    //         deposit(account_number);
-    //         break;
-
-    //     case 3:
-    //         withdraw_money(account_number);
-    //         break;
-
-    //     case 4:
-    //         acc_details(account_number);
-    //         break;
-    
-    //     case 6:
-    //         return 0;
-    
-    //     default:
-    //         printf("Invalid Choice\n");
-    //         break;
-    //     }
-
-    //     printf("\n");
     // }
 
     return 0;
