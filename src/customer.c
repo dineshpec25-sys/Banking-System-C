@@ -61,7 +61,7 @@ void user_console(int account_number)
     while(1)
     {
         printf("============================================\n");
-        printf("            Welcome to DBI                  \n");
+        printf("      Welcome to DBI - USER LOGIN PAGE      \n");
         printf("============================================\n");
         printf("    1. Withdraw\n");
         printf("    2. Deposit\n");
@@ -86,7 +86,8 @@ void user_console(int account_number)
             break;
 
         case 4:
-            return ;
+            return;
+            break;
     
         default:
             printf("Invalid Choice\n");
