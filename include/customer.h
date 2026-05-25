@@ -15,8 +15,14 @@ void admin_console();
 void user_console(int account_number);
 
 // User Related Functions
-void acc_balance(int acc_num);
-void deposit(int acc_num);
-void withdraw_money(int acc_num);
+void acc_balance(int account_number);
+void deposit(int account_number);
+void withdraw_money(int account_number);
 
 // Admin Related Functions
+void all_customer_details();
+void customer_search_acc_num(int account_num);
+void customer_search_customer_name(char *use_name);
+void delete_customer(int account_num);
+void modify_cus_details(int account_num);
+void bank_balance();
