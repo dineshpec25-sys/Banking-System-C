@@ -3,6 +3,7 @@
 void add_customer()
 {
     Customer c;
+    int password, re_password;
 
     FILE *fp;
     fp = fopen("data/bank.dat", "ab");
@@ -18,6 +19,20 @@ void add_customer()
 
     printf("Enter the Account number :");
     scanf("%d", &c.account_num);
+
+    printf("Enter a New Password:");
+    scanf("%d", &password);
+
+    printf("Retype Password:");
+    scanf("%d", &re_password);
+
+    if(password == re_password)
+    {
+        c.password = password;
+    }
+    else{
+        printf("Password doesn't match!!!");
+    }
 
     printf("Enter the Amount of First Deposit :");
     scanf("%f", &c.balance);

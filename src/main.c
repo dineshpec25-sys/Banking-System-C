@@ -2,62 +2,74 @@
 
 int main()
 {
-    int choice=0;
+    int l_choice=0;
+    // Customer c;
 
-    printf("******************* Welcome to DBI *******************\n");
-    printf("Choose the choice from below:\n");
-    printf("1. Check Balance\n");
-    printf("2. Deposit Amount\n");
-    printf("3. Withdraw Amount\n");
-    printf("4. Account Details\n");
-    printf("5. Add new Customer\n");
-    printf("6. Exit\n");
+    printf("1. User Login\n");
+    printf("2. Create New Account\n");
+    printf("3. Admin Login\n");
+    scanf("%d", &l_choice);
 
-    while(1)
+    if(l_choice == 1)
     {
-        printf("Enter the choice :");
-        scanf("%d", &choice);
-
-        if(choice == 5)
-        {
-            add_customer();
-        }
-
-        int account_number = 0;
-        if(choice >= 1 && choice <= 4)
-        {
-            printf("Enter the account number: ");
-            scanf("%d", &account_number);
-        }
-
-        switch (choice)
-        {
-        case 1:
-            acc_balance(account_number);
-            break;
-    
-        case 2:
-            deposit(account_number);
-            break;
-
-        case 3:
-            withdraw_money(account_number);
-            break;
-
-        case 4:
-            acc_details(account_number);
-            break;
-    
-        case 6:
-            return 0;
-    
-        default:
-            printf("Invalid Choice\n");
-            break;
-        }
-
-        printf("\n");
+        printf("User_login\n");
+        // user_console();
     }
+    else if(l_choice == 2)
+    {
+        add_customer();
+    }
+    else if(l_choice == 3)
+    {
+        printf("Admin_login\n");
+        // admin_console();
+    }
+
+    // while(1)
+    // {
+    //     printf("Enter the choice :");
+    //     scanf("%d", &choice);
+
+    //     if(choice == 5)
+    //     {
+    //         add_customer();
+    //     }
+
+    //     int account_number = 0;
+    //     if(choice >= 1 && choice <= 4)
+    //     {
+    //         printf("Enter the account number: ");
+    //         scanf("%d", &account_number);
+    //     }
+
+    //     switch (choice)
+    //     {
+    //     case 1:
+    //         acc_balance(account_number);
+    //         break;
+    
+    //     case 2:
+    //         deposit(account_number);
+    //         break;
+
+    //     case 3:
+    //         withdraw_money(account_number);
+    //         break;
+
+    //     case 4:
+    //         acc_details(account_number);
+    //         break;
+    
+    //     case 6:
+    //         return 0;
+    
+    //     default:
+    //         printf("Invalid Choice\n");
+    //         break;
+    //     }
+
+    //     printf("\n");
+    // }
 
     return 0;
 }
