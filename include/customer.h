@@ -15,4 +15,4 @@ void withdraw_money(int acc_num);
 void acc_details(int acc_num);
 void add_customer();
 void admin_console();   
-void user_console();
+void user_console(int account_number);

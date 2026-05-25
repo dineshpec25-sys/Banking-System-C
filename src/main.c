@@ -31,7 +31,7 @@ int main()
             if(fp == NULL)
             {
                 printf("404 Server Error!!!\n");
-                return ;
+                return 0;
             }
 
             while(fread(&c, sizeof(Customer), 1, fp))
@@ -43,10 +43,12 @@ int main()
 
                     if(c.password == l_password)
                     {
-                        user_console();
+                        user_console(acc_number);
                     }
                 }
             }
+
+            fclose(fp);
         }
         else if(l_choice == 2)
         {
@@ -64,11 +66,5 @@ int main()
 
         return 0;
     }
-
-    // while(1)
-    // {
-    
-    // }
-
     return 0;
 }

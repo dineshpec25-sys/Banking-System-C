@@ -54,7 +54,7 @@ void add_customer()
 
 }
 
-void user_console()
+void user_console(int account_number)
 {
     int choice=0;
 
@@ -71,16 +71,10 @@ void user_console()
         printf("Enter the choice :");
         scanf("%d", &choice);
 
-        if(choice >= 1 && choice <= 4)
-        {
-            printf("Enter the account number: ");
-            scanf("%d", &account_number);
-        }
-
         switch (choice)
         {
         case 1:
-            acc_balance(account_number);
+            withdraw_money(account_number);
             break;
     
         case 2:
@@ -88,15 +82,11 @@ void user_console()
             break;
 
         case 3:
-            withdraw_money(account_number);
+            acc_balance(account_number);
             break;
 
         case 4:
-            acc_details(account_number);
-            break;
-    
-        case 6:
-            return 0;
+            return ;
     
         default:
             printf("Invalid Choice\n");
