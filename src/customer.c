@@ -54,6 +54,27 @@ void add_customer()
 
 }
 
+void user_console()
+{
+    int choice=0;
+
+    printf("============================================\n");
+    printf("            Welcome to DBI                  \n");
+    printf("============================================\n");
+    printf("    1. Withdraw\n");
+    printf("    2. Deposit\n");
+    printf("    3. Balance\n");
+    printf("    4. Logout\n");
+
+    printf("Enter the choice:");
+    scanf("%d", &choice);
+
+    // while(1)
+    // {
+
+    // }
+}
+
 void acc_balance(int account_number)
 {
     Customer c;
