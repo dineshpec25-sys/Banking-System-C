@@ -21,8 +21,8 @@ void withdraw_money(int account_number);
 
 // Admin Related Functions
 void all_customer_details();
-void customer_search_acc_num(int account_num);
-void customer_search_customer_name(char *use_name);
+void customer_search_acc_num(int account_number);
+void customer_search_customer_name(char *name);
 void delete_customer();
 void modify_cus_details();
 void bank_balance();
