@@ -73,25 +73,25 @@ void user_console(int account_number)
 
         switch (choice)
         {
-        case 1:
-            withdraw_money(account_number);
-            break;
+            case 1:
+                withdraw_money(account_number);
+                break;
     
-        case 2:
-            deposit(account_number);
-            break;
+            case 2:
+                deposit(account_number);
+                break;
 
-        case 3:
-            acc_balance(account_number);
-            break;
+            case 3:
+                acc_balance(account_number);
+                break;
 
-        case 4:
-            return;
-            break;
+            case 4:
+                return;
+                break;
     
-        default:
-            printf("Invalid Choice\n");
-            break;
+            default:
+                printf("Invalid Choice\n");
+                break;
         }
 
         printf("\n");
