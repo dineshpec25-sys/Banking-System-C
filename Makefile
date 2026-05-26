@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Iinclude
 
-SRC = src/main.c src/customer.c
+SRC = src/main.c src/customer.c src/admin.c
 OUT = bank
 
 all:

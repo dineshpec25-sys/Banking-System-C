@@ -57,7 +57,7 @@ int main()
         else if(l_choice == 3)
         {   
             printf("Admin_login\n");
-            // admin_console();
+            admin_console();
         }
         else
         {

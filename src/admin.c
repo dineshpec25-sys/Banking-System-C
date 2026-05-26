@@ -29,7 +29,6 @@ void admin_console()
                 {
                     int accountnumber, option;
                     char name[50];
-                    char *pointer;
 
                     printf("Option 1: Search by Account Number\n");
                     printf("Option 2: Search by User Name\n");
@@ -49,14 +48,14 @@ void admin_console()
                         printf("Enter the Account Holder Name : ");
                         scanf("%s", name);
 
-                        *pointer = name;
-
-                        customer_search_customer_name(pointer);
+                        customer_search_customer_name(name);
                     }
                     else
                     {
                         printf("Invalid Option\n");
                     }
+
+                    break;
                 }
 
             case 3:
@@ -105,14 +104,14 @@ void customer_search_customer_name(char *use_name)
     return ;
 }
 
-void delete_customer(int account_num)
+void delete_customer()
 {
     printf("Delete Customer\n");
 
     return ;
 }
 
-void modify_cus_details(int account_num)
+void modify_cus_details()
 {
     printf("Modify Customer Details\n");
 
