@@ -151,8 +151,40 @@ void customer_search_acc_num(int account_number)
 
 void customer_search_customer_name(char *name)
 {
-    printf("Customer Name\n");
+    Customer c;
 
+    FILE *fp;
+    fp = fopen("data/bank.dat", "rb");
+
+    if(fp == NULL)
+    {
+        printf("404 Server Error!!!\n");
+
+        return;
+    }
+
+    int status = 0;
+
+    while(fread(&c, sizeof(Customer), 1, fp))
+    {
+        if(strcmp(c.account_holder_name,name) == 0)
+        {
+            printf("Account Number :      %d\n", c.account_num);
+            printf("Account Holder Name : %s\n", c.account_holder_name);
+            printf("Current Balance:      %.2f\n", c.balance);
+            printf("\n");
+
+            status = 1;
+            break;
+        }
+    }
+
+    if(!status)
+    {
+        printf("Account Number not found\n");
+    }
+
+    fclose(fp);
     return ;
 }
 
