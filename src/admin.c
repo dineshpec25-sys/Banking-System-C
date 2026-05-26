@@ -85,7 +85,28 @@ void admin_console()
 }
 void all_customer_details()
 {
-    printf("All Customer Details\n");
+    Customer c;
+
+    FILE *fp;
+    fp = fopen("data/bank.dat", "rb");
+
+    if(fp == NULL)
+    {
+        printf("404 Server Error!!!\n");
+        return ;
+    }
+
+    int count = 1;
+    while(fread(&c, sizeof(Customer), 1, fp))
+    {
+        printf("Customer Number : %d\n", count++);
+        printf("Account Number :      %d\n", c.account_num);
+        printf("Account Holder Name : %s\n", c.account_holder_name);
+        printf("Current Balance:      %.2f\n", c.balance);
+        printf("\n");
+    }
+
+    fclose(fp);
 
     return ;
 }
