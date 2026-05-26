@@ -1,5 +1,11 @@
 #include "../include/customer.h"
 
+void admin_console()
+{
+    printf("Admin Console\n");
+
+    return ;
+}
 void all_customer_details()
 {
     printf("All Customer Details\n");
