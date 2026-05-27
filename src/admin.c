@@ -197,8 +197,71 @@ void delete_customer()
 
 void modify_cus_details()
 {
-    printf("Modify Customer Details\n");
+    Customer c;
+    int choice;
 
+    FILE *fp;
+    fp = fopen("data/bank.dat", "rb+");
+
+    if(fp == NULL)
+    {
+        printf("404 Server Error\n");
+
+        return ;
+    }
+    
+    printf("===================================\n");
+    printf("\t1. Account Holder Name\n");
+    printf("\t2. Reset Password\n");
+    printf("Enter the field which need to Modify :");
+    scanf("%d", &choice);
+
+    if(choice == 1)
+    {
+        int Acc_num;
+        char name[100];
+        printf("Enter the Account number :");
+        scanf("%d", &Acc_num);
+
+        while(fread(&c, sizeof(Customer), 1, fp))
+        {
+            if(c.account_num == Acc_num)
+            {
+                printf("Enter the Name : ");
+                scanf("%s", name);
+
+                strcpy(c.account_holder_name, name);
+
+                fseek(fp, -sizeof(Customer), SEEK_CUR);
+                fwrite(&c, sizeof(Customer), 1, fp);
+                break;
+            }
+        }
+    }
+
+    else if(choice == 2)
+    {
+        int Acc_num, pass;
+        printf("Enter the Account Number : ");
+        scanf("%d", &Acc_num);
+
+        while(fread(&c, sizeof(Customer), 1, fp))
+        {
+            if(c.account_num == Acc_num)
+            {
+                printf("Enter New Password : ");
+                scanf("%d", &pass);
+
+                c.password = pass;
+
+                fseek(fp, -sizeof(Customer), SEEK_CUR);
+                fwrite(&c, sizeof(Customer), 1, fp);
+
+                break;
+            }
+        }
+    }
+    fclose(fp);
     return ;
 }
 
