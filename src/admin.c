@@ -267,7 +267,20 @@ void modify_cus_details()
 
 void bank_balance()
 {
-    printf("Bank Balance\n");
+    Customer c;
+    int total_amount=0;
+
+    FILE *fp;
+    fp = fopen("data/bank.dat","rb");
+
+    while(fread(&c, sizeof(Customer), 1, fp))
+    {
+        total_amount = total_amount + c.balance;
+    }
+
+    printf("Total Amount of Money present in Bank : %d\n", total_amount);
+
+    fclose(fp);
 
     return ;
 }
