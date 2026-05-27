@@ -11,10 +11,9 @@ void admin_console()
         printf("============================================\n");
         printf("    1. All Customer Details\n");
         printf("    2. Customer Search\n");
-        printf("    3. Delete Customer\n");
-        printf("    4. Modify Customer Details\n");
-        printf("    5. Total Bank Balance\n");
-        printf("    6. Logout\n");
+        printf("    3. Modify Customer Details\n");
+        printf("    4. Total Bank Balance\n");
+        printf("    5. Logout\n");
 
         printf("Enter the choice : ");
         scanf("%d", &choice);
@@ -59,18 +58,14 @@ void admin_console()
                 }
 
             case 3:
-                delete_customer();
-                break;
-
-            case 4:
                 modify_cus_details();
                 break;
 
-            case 5:
+            case 4:
                 bank_balance();
                 break;
             
-            case 6:
+            case 5:
                 return ;
                 break;
             
@@ -185,13 +180,6 @@ void customer_search_customer_name(char *name)
     }
 
     fclose(fp);
-    return ;
-}
-
-void delete_customer()
-{
-    printf("Delete Customer\n");
-
     return ;
 }
 

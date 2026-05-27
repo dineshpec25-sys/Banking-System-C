@@ -24,6 +24,5 @@ void withdraw_money(int account_number);
 void all_customer_details();
 void customer_search_acc_num(int account_number);
 void customer_search_customer_name(char *name);
-void delete_customer();
 void modify_cus_details();
 void bank_balance();
